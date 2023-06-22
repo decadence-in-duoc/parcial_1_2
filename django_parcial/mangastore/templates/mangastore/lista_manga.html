@@ -1,0 +1,27 @@
+{% extends 'mangastore/base.html' %}
+
+{% block contenido %}
+<div class="container">
+    <h2>soy listaproductos</h2>
+    <table  class="table table-striped">
+        <th>Nombre</th>
+        <th>Categoria</th>
+        <th>Descripcion</th>
+        <th>Precio</th>
+
+    {% for item in producto %}
+        <tr>
+            <td>{{item.nombre}}</td>
+            <td>{{item.categoria}}</td>
+            <td>{{item.descripcion}}</td>
+            <td>{{item.precio}}</td>
+
+            <td>
+                <a href="{url 'edit_manga' item.views}">Modificar</a>
+                <a href="{url 'eliminar_producto' item.views}">Eliminar</a>
+            </td>
+        </tr>
+    {% endfor%}
+    </table>
+</div>  
+{% endblock %}

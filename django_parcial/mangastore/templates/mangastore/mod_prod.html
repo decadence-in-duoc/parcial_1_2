@@ -1,0 +1,17 @@
+{% extends 'mangastore/base.html' %}
+
+{% block contenido %}
+
+<h2>Modificar Producto</h2>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}
+        <input type="reset" value="Limpiar">
+        <input type="submit" value="Modificar">
+    </table>
+</form>
+
+{{mensaje}}
+{% endblock %}
